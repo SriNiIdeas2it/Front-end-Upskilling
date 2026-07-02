@@ -1,6 +1,6 @@
-/* /* *{
-    border:1px solid red;
-} */
+ *{
+    border: 1px solid red !important;
+} 
  body{
     margin:0;
     padding:0;    
@@ -83,7 +83,6 @@ align-items: center;
     height:30px;
     background-color: #f8f9fa;
     border-radius:10px;
-    margin-left:50px;
     border:none;
 }
 
