@@ -1,0 +1,39 @@
+# =========================
+# Node.js / React
+# =========================
+**/node_modules/
+**/dist/
+**/build/
+**/.parcel-cache/
+**/.next/
+**/.vite/
+**/coverage/
+
+# Logs
+**/logs/
+**/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+**/.cache/
+**/.eslintcache
+
+# Optional
+**/*.tsbuildinfo
