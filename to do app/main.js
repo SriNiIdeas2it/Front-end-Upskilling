@@ -34,7 +34,9 @@ maxcount= parseInt(filteredary.id)+1;
     }
     else if(arg=="DELETE"){
       todo_array =  todo_array.filter((item)=>item.id != todo_id);
+
     }   
+    
     load_todoList();
       
 }
@@ -60,7 +62,7 @@ todo_array.forEach((item,cnt)=>{
 }
 
 function load_todoList(){
-
+if(todo_array.length>0){
     let todo_builder="";
     let todo_items=todo_array.map((item)=>{
             return `<div class='todo-row'><span id='todo_${item.id}'>${item.todo}</span>
@@ -70,6 +72,11 @@ function load_todoList(){
             <img class='delete_logo' src='delete.png' onclick=ToDo('DELETE','${item.id}')></img>
             </div></div>`
     }).join("");
-    todo_builder+=`<div>${todo_items}</div>`;
-    document.getElementsByClassName("todo_grid")[0].innerHTML=todo_builder;        
+    todo_builder+=`<div class='list-todo'>${todo_items}</div>`;
+    document.getElementsByClassName("todo_grid")[0].innerHTML=todo_builder;
+}
+else{
+      document.getElementsByClassName("todo_grid")[0].innerHTML='';
+}
+            
 }
