@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO APP</title>
     <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css"></link>
 </head>
 <body>
-    <div>
- <section>
-    <div>
-        <input type="text" class="txt_todo"></input>
-        <button class="btn_submit" onclick="ToDo('ADD')">Add</button>
-          <button class="btn_update" onclick="ToDo('UPDATE')">Update</button>
-    </div>
-   </section>
-   <section class="todo_grid">
 
-   </section>
+ <section class="container">
+    <div class="dv_header">
+         <h1>To-Do</h1>
+        <div>
+            <input type="text" class="txt_todo" placeholder="Add your task here"></input>
+            <button class="btn_submit" onclick="ToDo('ADD')">Add</button>
+          <!-- <button class="btn_update" onclick="ToDo('UPDATE')">Update</button> -->
+        </div>
     </div>
+   
+    <div class="todo-list-container">
+    <h2>Todo List</h2>
+    <div class="todo_grid">
+
+    </div>
+   </div>
+   </section>
+   
   
+
     
 </body>
 </html>
