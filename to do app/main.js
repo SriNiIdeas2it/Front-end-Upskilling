@@ -45,7 +45,7 @@ function EditToDo(todo_id){
         let filteredarry=todo_array.filter((item)=>item.id==todo_id);
 
     document.getElementById("todo_"+todo_id).innerHTML=`<input type='text' id='txt_todo_${todo_id}' value='${filteredarry[0].todo}'/>`
-        // document.getElementsByClassName("txt_todo")[0].value=filteredarry[0].todo; 
+        document.getElementsByClassName("txt_todo")[0].value=filteredarry[0].todo; 
          document.getElementsByClassName("btn_edit_"+todo_id)[0].style.display = 'none';
          document.getElementsByClassName("btn_update_"+todo_id)[0].style.display = 'inline-block';
          document.getElementsByClassName("btn_update_"+todo_id)[0].setAttribute("todoid",todo_id);
