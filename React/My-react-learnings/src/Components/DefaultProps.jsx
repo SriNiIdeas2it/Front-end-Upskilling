@@ -1,7 +1,7 @@
 const DefaultProps = ({name=["user"]}) => {
   return (
     <>
-    <h2>Hi {name}!</h2>     
+    <h2 className="success">Hi {name}!</h2>     
     </>
   )
 }

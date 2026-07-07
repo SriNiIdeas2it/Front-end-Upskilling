@@ -3,12 +3,17 @@ import { Theme } from "./Components/Theme"
 import PassingJSXasChildren from "./Components/PassingJSXasChildren"
 import PassSpreadusingProps from './Components/PassSpreadusingProps'
 import ConditionalRendering from "./Components/ConditionalRendering"
-
+import Alert from "./Components/Alert"
+import Menu from "./Components/Menu"
+import UseState from "./Components/UseState"
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
   return (
     <>
+    <UseState />
+    <Menu />
+    <Alert MessageType="error" />
     <h1>Hello World</h1>
 
     <Theme />
