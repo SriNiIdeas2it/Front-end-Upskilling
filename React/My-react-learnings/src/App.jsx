@@ -6,12 +6,16 @@ import ConditionalRendering from "./Components/ConditionalRendering"
 import Alert from "./Components/Alert"
 import Menu from "./Components/Menu"
 import UseState from "./Components/UseState"
+import UseStateWithObject from "./Components/UseStateWithObject"
+import Todo from "./Components/Todo/Todo"
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
   return (
     <>
-    <UseState />
+    <Todo />
+    {/* <UseStateWithObject /> */}
+    {/* <UseState />
     <Menu />
     <Alert MessageType="error" />
     <h1>Hello World</h1>
@@ -25,7 +29,7 @@ const isActive=true;
       <p>2st children</p>
     </PassingJSXasChildren>
     <PassSpreadusingProps  name="aravind" age="20" message="wecome back!"/>
-    <ConditionalRendering IsActive={isActive} />
+    <ConditionalRendering IsActive={isActive} /> */}
     </>
   )
 }
