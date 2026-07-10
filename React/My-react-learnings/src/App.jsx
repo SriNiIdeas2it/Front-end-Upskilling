@@ -8,12 +8,14 @@ import Menu from "./Components/Menu"
 import UseState from "./Components/UseState"
 import UseStateWithObject from "./Components/UseStateWithObject"
 import Todo from "./Components/Todo/Todo"
+import CounterUsingReducer from "./Components/CounterUsingReducer"
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
   return (
     <>
-    <Todo />
+    <CounterUsingReducer />
+    {/* <Todo /> */}
     {/* <UseStateWithObject /> */}
     {/* <UseState />
     <Menu />
