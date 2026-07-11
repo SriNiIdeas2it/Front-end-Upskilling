@@ -9,12 +9,24 @@ import UseState from "./Components/UseState"
 import UseStateWithObject from "./Components/UseStateWithObject"
 import Todo from "./Components/Todo/Todo"
 import CounterUsingReducer from "./Components/CounterUsingReducer"
+import CounterusingReducerInit from "./Components/CounterUsingReducerInit"
+import ContextProvider from "./Components/Context/ContextProvider"
+import ParentComp from "./Components/Context/ParentComp"
+import ChildComp from "./Components/Context/ChildComp"
+import UseRef from "./Components/UseRef"
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
   return (
     <>
-    <CounterUsingReducer />
+    <ContextProvider>
+      <ParentComp />
+      
+    </ContextProvider>
+    <UseRef/>
+    
+    {/* <CounterUsingReducer />
+    <CounterusingReducerInit /> */}
     {/* <Todo /> */}
     {/* <UseStateWithObject /> */}
     {/* <UseState />
