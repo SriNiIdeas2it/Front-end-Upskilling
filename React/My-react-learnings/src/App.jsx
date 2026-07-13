@@ -14,16 +14,19 @@ import ContextProvider from "./Components/Context/ContextProvider"
 import ParentComp from "./Components/Context/ParentComp"
 import ChildComp from "./Components/Context/ChildComp"
 import UseRef from "./Components/UseRef"
+import UseMemo from "./Components/UseMemo"
+ 
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
   return (
     <>
-    <ContextProvider>
+    <UseMemo />
+    {/* <ContextProvider>
       <ParentComp />
       
     </ContextProvider>
-    <UseRef/>
+    <UseRef/> */}
     
     {/* <CounterUsingReducer />
     <CounterusingReducerInit /> */}
