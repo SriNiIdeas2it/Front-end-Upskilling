@@ -1,9 +1,12 @@
-
+import Body from './Component/Body' 
+import { AuthProvider } from "./Component/AuthContext"
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>    
+    <>  
+    <AuthProvider>
+    <Body />
+    </AuthProvider>
     </>
   )
 }

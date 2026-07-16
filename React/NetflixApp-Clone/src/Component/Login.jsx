@@ -1,0 +1,97 @@
+import Header from "./Header"
+import background from '../Utils/netflix-backround.png'
+import { useContext, useRef, useState } from "react"
+import validation from '../Utils/validation.js'
+import {auth} from '../Utils/firebase.js'
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "./AuthContext.jsx"
+import { debugErrorMap } from "firebase/auth/cordova"
+
+
+const Login = () => {
+  const [isLogin,setIsLogin]=useState(true);
+  const [errorMessage,setErrorMessage]=useState(null);
+  const {setIsAuthenticated,userDet,setUserDet}=useContext(AuthContext)
+  const navigate=useNavigate();
+  const name=useRef(null);
+  const email=useRef(null);
+  const password=useRef(null);
+  const toggleLogin=()=>{    
+    setIsLogin(!isLogin);
+  }
+  const handleLoginSubmit=(e)=>{
+    e.preventDefault();
+    const errorMsg=validation(email?.current?.value,password?.current?.value,name?.current?.value,isLogin);
+    setErrorMessage(errorMsg);
+    if(errorMessage){
+      return null;
+    }
+    if(!isLogin){
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user);
+          setIsAuthenticated(true);
+          setUserDet({
+            uid:user.uid,
+            email:user.email
+          });
+          console.log(userDet);
+          navigate("/browser");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          console.log(error.message);
+         setErrorMessage(error.message);
+          setIsAuthenticated(false);
+          navigate("/login");
+          // ..
+        });
+    }
+    else{
+      signInWithEmailAndPassword(auth,  email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          setIsAuthenticated(true);
+          setUserDet({
+            uid:user.uid,
+            email:user.email
+          });
+          
+          navigate("/browser");
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          console.log(error.message);
+          setErrorMessage(error.message);
+          setIsAuthenticated(false);
+          navigate("/login")
+        });
+
+    }
+    
+  }
+  return (
+    <>
+    <Header />
+    <img className="cls_background" src={background} alt="logo" />
+    <form className="cls-form">
+      <h1>{isLogin ?`Sign In`:`Sign Up`}</h1>
+      {!isLogin &&(<input ref={name} type="text" placeholder="Enter your Name" />)}
+      <input ref={email} type="text" placeholder="Enter your Email ID" />
+      <input ref={password} type="password" placeholder="Enter your password" />
+      <p>{errorMessage}</p>
+      <button onClick={(e)=>handleLoginSubmit(e)}>{isLogin ?`Sign In`:`Sign Up`}</button>
+      <span className="cls-new-to-signin"  onClick={toggleLogin}>{isLogin ?`New to Netflix? Sign up Now`:`Already a user? Sign In Now`}</span>
+    </form>
+    </>
+  )
+}
+
+export default Login
