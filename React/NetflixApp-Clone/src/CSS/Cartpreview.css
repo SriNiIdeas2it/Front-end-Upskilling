@@ -1,0 +1,116 @@
+
+.Cart-preview{
+    min-height: 100vh;
+    background-image: url(/src/Utils/Home-background.png);
+}
+.Cart-page{
+    padding: 5px;    
+    background-color: #FAF7F1;
+    margin: 5px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+.cart-header{   
+    background-color: #f7e3c9;      
+    border-radius: 10px;;
+}
+.cart-header h2{
+    padding:20px;
+
+}
+.cart-body{
+    display: flex;
+    flex-direction: row;
+}
+.cls-each-product{    
+    border:1px solid #f7e3c9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding:10px;
+    gap:10px;
+}
+.product-details-list{
+    width: 75%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.div-product-image{
+    width:15%
+}
+
+.div-price{
+    width:15%;
+    font-size:18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-center-product{
+    width:70%;
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-evenly;
+}
+.div-center-product .product-title{
+font-size:18px;
+font-weight: 600;
+}
+.div-center-product .div-product-buttons{
+    display: flex;
+    gap :10px;
+}
+.div-center-product .product-disc{    
+    padding: 5px 0 5px 0;
+    font-size:13px;
+}
+.div-product-image img{
+    width:100px;
+    border-radius: 5px;
+}
+
+.Order-summary{
+    width: 25%;
+    background-color: #f7e3c9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 10px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.Order-summary div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+}
+.Order-summary span{
+    font-size:13px;
+    font-weight: 600;
+}
+.div-Order-summary-button{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex;
+    gap:10px;
+}
+.div-Order-summary-button button{
+    background-color: #97e85c;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;    
+    cursor: pointer;   
+}
+.div-Order-summary-button :first-child {
+    background-color: #fdb252 ;
+    cursor: pointer;
+}

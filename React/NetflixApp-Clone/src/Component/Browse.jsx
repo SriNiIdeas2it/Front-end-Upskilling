@@ -1,12 +1,12 @@
 import Header from "./Header"
-import HomeBackground from '../Utils/Home-background.png'
+import ProductCard from "./ProductCard"
 
 const Browse = () => {
   return (
-    <>  
-    <Header />
-    <img src={HomeBackground} />
-    </>
+    <div className="home">
+      <Header />
+      <ProductCard />
+    </div>
   )
 }
 

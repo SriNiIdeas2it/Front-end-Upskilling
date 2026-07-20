@@ -3,6 +3,7 @@ import Login from "./Login"
 import Browse from "./browse"
 import { useContext, useState } from "react"
 import { AuthContext } from "../Component/AuthContext"
+import CartPreview from "./CartPreview"
 
 
 const Body = () => {
@@ -25,6 +26,10 @@ const {isAuthenticated,setIsAuthenticated}=useContext(AuthContext);
             element:<ProtectedRoute isAuthenticated={isAuthenticated}>
                         <Browse />
                     </ProtectedRoute>
+        },
+        {
+            path:"/cartpreview",
+            element:<CartPreview />
         }
     ])
   return (

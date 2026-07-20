@@ -6,6 +6,7 @@ import {auth} from '../Utils/firebase.js'
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "./AuthContext.jsx"
+import {CartContext} from "./CartContext.jsx"
 import { debugErrorMap } from "firebase/auth/cordova"
 
 
@@ -13,6 +14,7 @@ const Login = () => {
   const [isLogin,setIsLogin]=useState(true);
   const [errorMessage,setErrorMessage]=useState(null);
   const {setIsAuthenticated,userDet,setUserDet}=useContext(AuthContext)
+  const {cartProduct}=useContext(CartContext);
   const navigate=useNavigate();
   const name=useRef(null);
   const email=useRef(null);
@@ -34,6 +36,7 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           setIsAuthenticated(true);
+          localStorage.setItem("UID",user.uid);
           setUserDet({
             uid:user.uid,
             email:user.email
@@ -46,6 +49,7 @@ const Login = () => {
           const errorCode = error.code;
           console.log(error.message);
          setErrorMessage(error.message);
+         localStorage.setItem("UID","");
           setIsAuthenticated(false);
           navigate("/login");
           // ..
@@ -58,6 +62,7 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           setIsAuthenticated(true);
+          localStorage.setItem("UID",user.uid);
           setUserDet({
             uid:user.uid,
             email:user.email
@@ -70,6 +75,7 @@ const Login = () => {
           const errorCode = error.code;
           console.log(error.message);
           setErrorMessage(error.message);
+         localStorage.setItem("UID","");
           setIsAuthenticated(false);
           navigate("/login")
         });
