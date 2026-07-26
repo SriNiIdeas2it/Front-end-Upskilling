@@ -7,8 +7,9 @@ export function  AuthProvider({children}){
         uid:null,
         email:null
       })
+      const [isLoading,setIsLoading]=useState(false);
     return(
-        <AuthContext.Provider value={{isAuthenticated,setIsAuthenticated,userDet,setUserDet}}>
+        <AuthContext.Provider value={{isAuthenticated,setIsAuthenticated,userDet,setUserDet,isLoading,setIsLoading}}>
         {children}
         </AuthContext.Provider>
     )

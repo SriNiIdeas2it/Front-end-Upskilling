@@ -4,9 +4,10 @@ import { CartContext } from './CartContext';
 
 const Product = ({data}) => {
     const [itemCount, setItemCount] = useState(0);
-    const { cartProduct, setCartProduct, products } = useContext(CartContext);
+    const { cartProduct, setCartProduct, products, setIsBooked } = useContext(CartContext);
 
     function handleAddItem(productid) {
+        setIsBooked(false);
         setItemCount(prev => prev + 1);
         const selectedProduct = products.find(item => item.id === productid);
         if (selectedProduct) {
@@ -15,6 +16,7 @@ const Product = ({data}) => {
     }
 
     function handleRemoveItem(productid) {
+         setIsBooked(false);
         if (itemCount > 0) {
             setItemCount(prev => prev - 1);
         }
@@ -31,7 +33,7 @@ const Product = ({data}) => {
     console.log("added:",cartProduct);
     return (
         <div key={`product_id_${data.id}`} className="product-card" >
-            <img src={data.images[0]} alt={data.title} />
+            <img src={data.images[0]} loading="lazy" alt={data.title} />
             <span className='cls-product-title'>{data.title}</span>
             <div className="cls-product" >
                 <span className='cls-price'>Price: ${data.price}</span>

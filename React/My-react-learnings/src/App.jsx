@@ -15,13 +15,16 @@ import ParentComp from "./Components/Context/ParentComp"
 import ChildComp from "./Components/Context/ChildComp"
 import UseRef from "./Components/UseRef"
 import UseMemo from "./Components/UseMemo"
+import Objects from "./Components/TypeScript/Objects"
  
 function App() {  
 const arry=["srini","karthik","neel"];
 const isActive=true;
+const user={name:"srini",age:20, isLoggedIn: true};
   return (
     <>
-    <UseMemo />
+    <Objects data={user}/>
+    {/* <UseMemo /> */}
     {/* <ContextProvider>
       <ParentComp />
       

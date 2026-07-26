@@ -15,6 +15,7 @@ const Login = () => {
   const [errorMessage,setErrorMessage]=useState(null);
   const {setIsAuthenticated,userDet,setUserDet}=useContext(AuthContext)
   const {cartProduct}=useContext(CartContext);
+  const {isLoading,setIsLoading}=useContext(AuthContext);
   const navigate=useNavigate();
   const name=useRef(null);
   const email=useRef(null);
@@ -24,9 +25,11 @@ const Login = () => {
   }
   const handleLoginSubmit=(e)=>{
     e.preventDefault();
+    setIsLoading(true);
     const errorMsg=validation(email?.current?.value,password?.current?.value,name?.current?.value,isLogin);
     setErrorMessage(errorMsg);
     if(errorMessage){
+      setIsLoading(false);
       return null;
     }
     if(!isLogin){
@@ -42,8 +45,7 @@ const Login = () => {
             email:user.email
           });
           console.log(userDet);
-          navigate("/browser");
-          // ...
+          navigate("/browser");          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -51,8 +53,8 @@ const Login = () => {
          setErrorMessage(error.message);
          localStorage.setItem("UID","");
           setIsAuthenticated(false);
+          setIsLoading(false);
           navigate("/login");
-          // ..
         });
     }
     else{
@@ -66,10 +68,8 @@ const Login = () => {
           setUserDet({
             uid:user.uid,
             email:user.email
-          });
-          
-          navigate("/browser");
-          // ...
+          });          
+          navigate("/browser");          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -94,6 +94,7 @@ const Login = () => {
       <input ref={password} type="password" placeholder="Enter your password" />
       <p>{errorMessage}</p>
       <button onClick={(e)=>handleLoginSubmit(e)}>{isLogin ?`Sign In`:`Sign Up`}</button>
+     {isLoading && <span className="loader"></span>}
       <span className="cls-new-to-signin"  onClick={toggleLogin}>{isLogin ?`New to Netflix? Sign up Now`:`Already a user? Sign In Now`}</span>
     </form>
     </>

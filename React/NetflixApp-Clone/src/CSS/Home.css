@@ -68,5 +68,6 @@
     justify-content: center;
 }
 .cls-cart-section img{
-width:36px;
+    width:36px;
+    cursor: pointer;
 }

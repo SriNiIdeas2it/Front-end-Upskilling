@@ -1,7 +1,7 @@
 import Header from "./Header"
 import ProductCard from "./ProductCard"
 
-const Browse = () => {
+const Browse = () => {    
   return (
     <div className="home">
       <Header />
