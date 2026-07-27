@@ -13,9 +13,8 @@ import { debugErrorMap } from "firebase/auth/cordova"
 const Login = () => {
   const [isLogin,setIsLogin]=useState(true);
   const [errorMessage,setErrorMessage]=useState(null);
-  const {setIsAuthenticated,userDet,setUserDet}=useContext(AuthContext)
+  const {setIsAuthenticated,userDet,setUserDet,isLoading,setIsLoading}=useContext(AuthContext);
   const {cartProduct}=useContext(CartContext);
-  const {isLoading,setIsLoading}=useContext(AuthContext);
   const navigate=useNavigate();
   const name=useRef(null);
   const email=useRef(null);
@@ -28,9 +27,9 @@ const Login = () => {
     setIsLoading(true);
     const errorMsg=validation(email?.current?.value,password?.current?.value,name?.current?.value,isLogin);
     setErrorMessage(errorMsg);
-    if(errorMessage){
+    if(errorMsg){
       setIsLoading(false);
-      return null;
+      return;
     }
     if(!isLogin){
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
@@ -45,7 +44,8 @@ const Login = () => {
             email:user.email
           });
           console.log(userDet);
-          navigate("/browser");          
+          navigate("/browse");
+          setIsLoading(false);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -53,8 +53,8 @@ const Login = () => {
          setErrorMessage(error.message);
          localStorage.setItem("UID","");
           setIsAuthenticated(false);
-          setIsLoading(false);
           navigate("/login");
+          setIsLoading(false);
         });
     }
     else{
@@ -68,8 +68,10 @@ const Login = () => {
           setUserDet({
             uid:user.uid,
             email:user.email
-          });          
-          navigate("/browser");          
+          });           
+         setIsLoading(prev=> false); 
+          navigate("/browse");
+          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -78,6 +80,7 @@ const Login = () => {
          localStorage.setItem("UID","");
           setIsAuthenticated(false);
           navigate("/login")
+          setIsLoading(false);
         });
 
     }

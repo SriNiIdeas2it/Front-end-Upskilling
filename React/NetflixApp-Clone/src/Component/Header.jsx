@@ -18,7 +18,7 @@ const Header = () => {
       navigate("/cartpreview");
     }    
     function redirectHome(){
-      navigate("/browser");
+      navigate("/browse");
     }
   return (
     <div className='cls-header'>

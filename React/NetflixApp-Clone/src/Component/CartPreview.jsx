@@ -30,7 +30,7 @@ const CartPreview = () => {
     }
     
   return (
-    <div className='Cart-preview'>
+    <div className={`${isBooked ? 'Booking-Success' : 'Cart-preview'}`}>
     <Header />
     {isBooked ?<BookingPage />
     :<div className='Cart-page'>
