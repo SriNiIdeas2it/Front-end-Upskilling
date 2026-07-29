@@ -1,0 +1,69 @@
+leave-management/
+│
+├── public/
+│
+├── src/
+│
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── styles/
+│       └── global.css
+│
+├── components/
+│   ├── Button/
+│   │   ├── Button.jsx
+│   │   ├── Button.css
+│   │   └── index.js
+│   │
+│   ├── Input/
+│   ├── Loader/
+│   ├── Navbar/
+│   ├── Sidebar/
+│   ├── Modal/
+│   └── Table/
+│
+├── pages/
+│   ├── Login/
+│   │   └── Login.jsx
+│   │
+│   ├── Dashboard/
+│   │   └── Dashboard.jsx
+│   │
+│   ├── Employee/
+│   │   ├── EmployeeList.jsx
+│   │   ├── EmployeeCreate.jsx
+│   │   └── EmployeeEdit.jsx
+│   │
+│   ├── Leave/
+│   │   ├── LeaveRequest.jsx
+│   │   ├── LeaveHistory.jsx
+│   │   └── LeaveApproval.jsx
+│   │
+│   └── Profile/
+│       └── Profile.jsx
+│
+├── services/
+│   ├── firebase.js
+│   ├── authService.js
+│   ├── employeeService.js
+│   └── leaveService.js
+│
+├── context/
+│   └── AuthContext.jsx
+│
+├── hooks/
+│   └── useAuth.js
+│
+├── utils/
+│   ├── constants.js
+│   ├── helper.js
+│   └── validation.js
+│
+├── routes/
+│   ├── AppRoutes.jsx
+│   └── ProtectedRoute.jsx
+│
+├── App.jsx
+├── main.jsx
+└── package.json

@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+font-family: 'Inter', sans-serif;
+}
+.w-10{
+    width:10%;
+}
+.w-25{
+    width:25%
+}
+.w-50{
+    width:50%
+}
+.w-75{
+    width:75%
+}
+.w-100{
+    width:100%
+}
+.h-10{
+    height: 10%;
+}
+.primary-color{
+    color: #2563eb;
+}
+.font-size-12{
+    font-size:12px;
+
+}
+.small-word{
+    color:#6b7280;
+    font-size:12px;
+    font-weight: 700;
+}
+.bold{
+    font-weight: bold;
+}
