@@ -6,6 +6,28 @@
   margin-bottom: 16px;
 }
 
+.input-group-checkbox {
+  justify-content: center;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  min-width: 180px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #f8fafc;
+}
+
+.checkbox-wrapper .input-field {
+  width: auto;
+  margin: 0;
+}
+
 .input-label {
   font-size: 12px;
   font-weight: 600;

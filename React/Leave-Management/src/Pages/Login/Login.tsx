@@ -33,10 +33,10 @@ const Login = () => {
         <span style={{ fontSize: '12px', color: '#6b7280', fontWeight: '700' }}>Sign in to continue</span>
         <Input
           placeholder="Enter your email" type="input"
-          label="Email" name="email" />
+          label="Email" name="email" className="w-100"/>
         <Input
           placeholder="Enter your password" type="password"
-          label="Password" name="password" />
+          label="Password" name="password"  className="w-100"/>
         <Button label="Sign In" type="button" className="login-btn" variant="primary" />
         <span className="small-word">Or Continue with</span>
         <div className="google-btn" onClick={handleGoogleLogin}>

@@ -1,0 +1,169 @@
+.leave-request-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.leave-request-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.leave-request-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.breadcrumb span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb .separator {
+  margin: 0 6px;
+}
+
+.section-title {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.leave-form {
+  display: grid;
+  gap: 18px;
+  padding:10px 0 0 0
+}
+
+.leave-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.form-group textarea {
+  min-height: 108px;
+  resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.field-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.leave-balance-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.balance-item {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 16px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.balance-item span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.balance-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.balance-status {
+  font-size: 12px;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;    
+}
+
+@media (max-width: 1080px) {
+  .leave-form-grid,
+  .leave-balance-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .leave-request-header,
+  .leave-form-grid,
+  .leave-balance-card {
+    grid-template-columns: 1fr;
+  }
+
+  .actions-row {
+    justify-content: stretch;
+  }
+}
