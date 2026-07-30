@@ -29,7 +29,7 @@ export default function Input({
 
       {type === "textarea" ? (
         <textarea
-          className="input-field"
+          className={`input-field ${className}`}
           id={name}
           name={name}
           placeholder={placeholder}
@@ -40,7 +40,7 @@ export default function Input({
         />
       ) : options ? (
         <select
-          className="input-field"
+          className={`input-field ${className}`}
           id={name}
           name={name}
           value={value}

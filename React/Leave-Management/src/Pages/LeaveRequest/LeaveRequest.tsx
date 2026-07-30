@@ -26,6 +26,7 @@ const LeaveRequest = () => {
                 { label: "Earned Leave", value: "earned" },
               ]}
               required
+              className="w-100"
             />
 
             <Input
@@ -48,6 +49,7 @@ const LeaveRequest = () => {
               label="Half Day"
               name="halfDay"
               type="checkbox"
+              className="w-100"
             />
 
             <Input
@@ -57,7 +59,7 @@ const LeaveRequest = () => {
               placeholder="Enter reason for leave"
               rows={5}
               required
-              className="reason-field"
+              className="reason-field w-100"
             />
           </div>
 
